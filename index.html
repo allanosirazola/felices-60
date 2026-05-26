@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felices 60 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terracota: #c0522b;
+      --oro: #c9a227;
+      --turquesa: #1a6b72;
+      --azul-noche: #0d2b38;
+      --crema: #f5ede0;
+      --crema-suave: #faf5ee;
+      --texto: #2c1a0e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--crema-suave);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO / PORTADA ──────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--azul-noche);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(201,162,39,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(192,82,43,0.10) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-ornament {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      animation: flotar 3s ease-in-out infinite;
+    }
+
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--oro);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--oro);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .scroll-hint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: parpadeo 2s ease-in-out infinite;
+    }
+
+    .scroll-hint .arrow {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    }
+
+    @keyframes parpadeo {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    /* ─── SECCIONES GENERALES ─────────────────────────────────── */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .container-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── REVEAL ──────────────────────────────────────────────── */
+    .reveal {
+      background: var(--turquesa);
+      color: #fff;
+      text-align: center;
+      padding: 7rem 2rem;
+    }
+
+    .reveal .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .reveal h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .reveal h2 em {
+      font-style: italic;
+      color: var(--oro);
+    }
+
+    .reveal p {
+      font-size: 1.15rem;
+      font-weight: 300;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ─── TEXTO + IMAGEN ──────────────────────────────────────── */
+    .split {
+      background: var(--crema-suave);
+    }
+
+    .split-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .split-inner.reverse { direction: rtl; }
+    .split-inner.reverse > * { direction: ltr; }
+
+    .split-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      color: var(--azul-noche);
+    }
+
+    .split-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #4a3728;
+      margin-bottom: 1rem;
+    }
+
+    .split-text p:last-child { margin-bottom: 0; }
+
+    .split-img {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .split-img img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    /* ─── BLOQUE OSCURO / CUMPLEAÑOS ──────────────────────────── */
+    .dark-block {
+      background: var(--azul-noche);
+      color: #fff;
+      text-align: center;
+    }
+
+    .dark-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .dark-block h2 span { color: var(--oro); }
+
+    .dark-block p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.75);
+      max-width: 640px;
+      margin: 0 auto 1rem;
+      font-weight: 300;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.8rem;
+      border: 1px solid rgba(201,162,39,0.5);
+      color: var(--oro);
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-radius: 999px;
+    }
+
+    /* ─── GALERÍA ─────────────────────────────────────────────── */
+    .galeria {
+      background: var(--crema);
+      padding: 6rem 2rem;
+    }
+
+    .galeria-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .galeria-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--azul-noche);
+      margin-bottom: 0.5rem;
+    }
+
+    .galeria-header p {
+      color: #7a5c44;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .grid-fotos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .grid-fotos .foto-item {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .grid-fotos .foto-item.grande {
+      grid-row: span 2;
+    }
+
+    .grid-fotos img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .grid-fotos .foto-item:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ─── OVEJAS ──────────────────────────────────────────────── */
+    .ovejas {
+      background: #f5ede0;
+      text-align: center;
+    }
+
+    .ovejas-emoji {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .ovejas h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      color: var(--azul-noche);
+      margin-bottom: 1.25rem;
+    }
+
+    .ovejas p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #4a3728;
+      max-width: 580px;
+      margin: 0 auto 0.75rem;
+    }
+
+    /* ─── BILLETES / HOTEL ────────────────────────────────────── */
+    .tickets {
+      background: var(--azul-noche);
+      padding: 6rem 2rem;
+    }
+
+    .tickets-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #fff;
+    }
+
+    .tickets-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .tickets-header h2 span { color: var(--oro); }
+
+    .tickets-header p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+
+    .tickets-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .ticket-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,162,39,0.2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ticket-card .card-label {
+      padding: 0.75rem 1.2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--oro);
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+    }
+
+    .ticket-card img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─── FIRMA ───────────────────────────────────────────────── */
+    .firma {
+      background: var(--crema-suave);
+      text-align: center;
+      padding: 7rem 2rem 8rem;
+    }
+
+    .firma-linea {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--oro), transparent);
+      margin: 0 auto 2rem;
+    }
+
+    .firma p {
+      font-size: 1.1rem;
+      line-height: 2;
+      color: #4a3728;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .firma .nombres {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--azul-noche);
+    }
+
+    /* ─── SEPARADOR ───────────────────────────────────────────── */
+    .sep {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 500px;
+      margin: 2.5rem auto;
+    }
+
+    .sep-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,162,39,0.4), transparent);
+    }
+
+    .sep-icon { color: var(--oro); font-size: 1.1rem; }
+
+    /* ─── ANIMACIONES DE SCROLL ───────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .fade-in.visible { opacity: 1; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .split-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .split-inner.reverse { direction: ltr; }
+      .grid-fotos { grid-template-columns: 1fr 1fr; }
+      .grid-fotos .foto-item.grande { grid-row: span 1; }
+      .tickets-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .grid-fotos { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       PORTADA — no desvela nada todavía
+  ══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-ornament">✦</div>
+    <p class="hero-tag">Para vosotros</p>
+    <h1>
+      Marisa<br />
+      <span>&</span><br />
+      José Andrés
+    </h1>
+    <p class="hero-sub">
+      Los 60 no se cumplen todos los días.<br />
+      Y nosotros llevamos un tiempo con algo entre manos.
+    </p>
+    <div class="scroll-hint">
+      <span>Seguir leyendo</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       REVEAL — el gran anuncio
+  ══════════════════════════════════════════════ -->
+  <section class="reveal">
+    <div class="container">
+      <p class="eyebrow fade-up">Este verano</p>
+      <h2 class="fade-up" style="transition-delay: 0.1s">
+        Os vais a<br /><em>Estambul</em> 🇹🇷
+      </h2>
+      <p class="fade-up" style="transition-delay: 0.2s">
+        Sí, habéis leído bien. Billetes, hotel y todo incluido.<br />
+        Vuestra única tarea es hacer la maleta.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       POR QUÉ ESTAMBUL — Marisa
+  ══════════════════════════════════════════════ -->
+  <section class="split">
+    <div class="container">
+      <div class="split-inner fade-up">
+        <div class="split-text">
+          <h2>Marisa, tú ya sabes lo que es</h2>
+          <p>
+            Cuando vine de Erasmus a Turquía, tú viniste a verme. Recorriste esas calles,
+            comiste en esos restaurantes, te quedaste prendada de la música y de la gente.
+            Y volviste a casa con ganas de más.
+          </p>
+          <p>
+            Entre Diriliş Ertuğrul y Fatih Harbiye ya tienes más vocabulario turco
+            que muchos estudiantes de primer año. Creo que va siendo hora de que lo uses
+            en el sitio adecuado.
+          </p>
+          <p>
+            Esta vez vais los dos, y con calor, que ya sé que eso importa.
+          </p>
+        </div>
+        <div class="split-img fade-in" style="transition-delay: 0.2s">
+          <img src="imagenes/Gemini_Generated_Image_1hpzma1hpzma1hpz.png" alt="Marisa en Estambul" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- separador -->
+  <div class="sep fade-up">
+    <div class="sep-line"></div>
+    <span class="sep-icon">✦</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       POR QUÉ ESTAMBUL — José Andrés
+  ══════════════════════════════════════════════ -->
+  <section class="split" style="padding-top: 0;">
+    <div class="container">
+      <div class="split-inner reverse fade-up">
+        <div class="split-text">
+          <h2>José Andrés, por fin</h2>
+          <p>
+            Llevabas años diciendo que te gustaría ir. Que en cuanto hubiera ocasión.
+            Que ya en algún momento. Pues bien, el momento ha llegado y viene
+            con billete de avión incluido, así que ya no tienes excusa.
+          </p>
+          <p>
+            Cuando Marisa volvió de su visita no paró de contarte cosas. La Mezquita Azul,
+            el Bósforo, los bazares, el çay en vasos de cristal... Ahora podrás comprobarlo
+            por ti mismo.
+          </p>
+        </div>
+        <div class="split-img fade-in" style="transition-delay: 0.2s">
+          <img src="imagenes/Gemini_Generated_Image_ahcjsgahcjsgahcj.png" alt="José Andrés en Estambul" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       LOS 60 — bloque oscuro con humor
+  ══════════════════════════════════════════════ -->
+  <section class="dark-block">
+    <div class="container">
+      <h2 class="fade-up">
+        Los <span>60</span> por todo lo alto
+      </h2>
+      <p class="fade-up" style="transition-delay: 0.1s">
+        Dicen que a los 60 empieza la tercera edad. Nosotros no lo vemos así —
+        más bien os estáis calentando para la segunda vuelta.
+      </p>
+      <p class="fade-up" style="transition-delay: 0.15s">
+        Pero como hay que celebrarlo de alguna forma, y lo de una tarta ya se os
+        queda pequeño, os hemos pensado algo un poco más... aireado.
+      </p>
+      <p class="fade-up" style="transition-delay: 0.2s">
+        Estambul es de las ciudades que, una vez que te atrapan, no te sueltan.
+        Buena compañía para dos personas que tampoco sueltan fácilmente.
+      </p>
+      <div class="badge fade-up" style="transition-delay: 0.25s">Felices 60, Marisa y José Andrés</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       GALERÍA DE FOTOS
+  ══════════════════════════════════════════════ -->
+  <section class="galeria">
+    <div class="container-wide">
+      <div class="galeria-header fade-up">
+        <h2>Vosotros allí</h2>
+        <p>Un pequeño adelanto de lo que os espera</p>
+      </div>
+      <div class="grid-fotos">
+        <div class="foto-item grande fade-in">
+          <img src="imagenes/Gemini_Generated_Image_bq1txpbq1txpbq1t.png" alt="Foto montaje" loading="lazy" />
+        </div>
+        <div class="foto-item fade-in" style="transition-delay: 0.1s">
+          <img src="imagenes/Gemini_Generated_Image_hh4a4qhh4a4qhh4a.png" alt="Foto montaje" loading="lazy" />
+        </div>
+        <div class="foto-item fade-in" style="transition-delay: 0.15s">
+          <img src="imagenes/Gemini_Generated_Image_m0ldlkm0ldlkm0ld.png" alt="Foto montaje" loading="lazy" />
+        </div>
+        <div class="foto-item fade-in" style="transition-delay: 0.2s">
+          <img src="imagenes/Gemini_Generated_Image_oxqi41oxqi41oxqi.png" alt="Foto montaje" loading="lazy" />
+        </div>
+        <div class="foto-item fade-in" style="transition-delay: 0.25s">
+          <img src="imagenes/Gemini_Generated_Image_qriezqqriezqqrie.png" alt="Foto montaje" loading="lazy" />
+        </div>
+        <div class="foto-item fade-in" style="transition-delay: 0.3s">
+          <img src="imagenes/Gemini_Generated_Image_ryhiyrryhiyrryhi.png" alt="Foto montaje" loading="lazy" />
+        </div>
+        <div class="foto-item fade-in" style="transition-delay: 0.35s">
+          <img src="imagenes/Gemini_Generated_Image_snxzn6snxzn6snxz.png" alt="Foto montaje" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       LAS OVEJAS Y LA VACA
+  ══════════════════════════════════════════════ -->
+  <section class="ovejas">
+    <div class="container">
+      <span class="ovejas-emoji fade-up">🐑🐑🐄</span>
+      <h2 class="fade-up" style="transition-delay: 0.05s">
+        De las ovejas y la vaca nos encargamos nosotros
+      </h2>
+      <p class="fade-up" style="transition-delay: 0.1s">
+        Que no cunda el pánico. Tenéis permiso para desconectar del todo,
+        que el ganado no se va a quedar sin cuidados por iros una semanita
+        a recorrer mezquitas.
+      </p>
+      <p class="fade-up" style="transition-delay: 0.15s">
+        De verdad. Id tranquilos. Si acaso ya os llamamos si hay alguna
+        urgencia ovina de consideración, pero no la va a haber.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       BILLETES Y HOTEL
+  ══════════════════════════════════════════════ -->
+  <section class="tickets">
+    <div class="container-wide">
+      <div class="tickets-header fade-up">
+        <h2>Los <span>detalles del viaje</span></h2>
+        <p>Aquí tenéis los billetes y el alojamiento</p>
+      </div>
+      <div class="tickets-grid">
+        <div class="ticket-card fade-up" style="transition-delay: 0.1s">
+          <div class="card-label">✈ Vuelos</div>
+          <img src="imagenes/image.png" alt="Billetes de avión" />
+        </div>
+        <div class="ticket-card fade-up" style="transition-delay: 0.2s">
+          <div class="card-label">🏨 Hotel</div>
+          <img src="imagenes/image (1).png" alt="Reserva de hotel" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FIRMA
+  ══════════════════════════════════════════════ -->
+  <section class="firma">
+    <div class="container">
+      <div class="firma-linea fade-in"></div>
+      <p class="fade-up">
+        Porque os lo merecéis, porque lleváis 60 años currándoos todo con ganas,
+        y porque si hay alguien que disfruta de un viaje así, sois vosotros.
+      </p>
+      <p class="fade-up" style="transition-delay: 0.1s">
+        Con mucho cariño,
+      </p>
+      <p class="nombres fade-up" style="transition-delay: 0.2s">
+        María y Aitor
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // ─── Animaciones al hacer scroll ───────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up, .fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
